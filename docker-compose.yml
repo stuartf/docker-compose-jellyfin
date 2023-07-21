@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    user: ${JF_USER}
+    network_mode: 'host'
+    volumes:
+      - ${JF_CONFIG_PATH}:/config
+      - ${JF_CACHE_PATH}:/cache
+      - /srv/media:/media:ro
+    restart: 'unless-stopped'
+    # Optional - alternative address used for autodiscovery
+    environment:
+      - JELLYFIN_PublishedServerUrl
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
