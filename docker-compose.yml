@@ -16,7 +16,7 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
   zap2xml:
-    image: shuaiscott/zap2xml
+    image: stuartfreeman/zap2xml
     restart: 'unless-stopped'
     environment:
       - USERNAME
