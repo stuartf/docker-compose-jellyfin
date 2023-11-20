@@ -10,6 +10,12 @@ services:
       - /srv/media:/media:ro
       - guide:/guide:ro
     restart: 'unless-stopped'
+    devices:
+      - /dev/dri:/dev/dri
+      - /dev/vchiq:/dev/vchiq
+      - /dev/video10:/dev/video10
+      - /dev/video11:/dev/video11
+      - /dev/video12:/dev/video12
     # Optional - alternative address used for autodiscovery
     environment:
       - JELLYFIN_PublishedServerUrl
