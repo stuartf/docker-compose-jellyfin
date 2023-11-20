@@ -8,9 +8,22 @@ services:
       - ${JF_CONFIG_PATH}:/config
       - ${JF_CACHE_PATH}:/cache
       - /srv/media:/media:ro
+      - guide:/guide
     restart: 'unless-stopped'
     # Optional - alternative address used for autodiscovery
     environment:
       - JELLYFIN_PublishedServerUrl
     extra_hosts:
       - "host.docker.internal:host-gateway"
+  zap2xml:
+    image: shuaiscott/zap2xml
+    restart: 'unless-stopped'
+    environment:
+      - USERNAME
+      - PASSWORD
+      - OPT_ARGS
+    volumes:
+      - guide:/data
+
+volumes:
+  guide:
