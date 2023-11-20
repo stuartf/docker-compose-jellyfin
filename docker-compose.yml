@@ -8,7 +8,7 @@ services:
       - ${JF_CONFIG_PATH}:/config
       - ${JF_CACHE_PATH}:/cache
       - /srv/media:/media:ro
-      - guide:/guide
+      - guide:/guide:ro
     restart: 'unless-stopped'
     # Optional - alternative address used for autodiscovery
     environment:
