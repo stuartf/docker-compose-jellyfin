@@ -8,6 +8,7 @@ services:
       - ${JF_CONFIG_PATH}:/config
       - ${JF_CACHE_PATH}:/cache
       - /srv/media:/media:ro
+      - ${JF_RECORDING_PATH}:/recordings
       - guide:/guide:ro
     restart: 'unless-stopped'
     devices:
