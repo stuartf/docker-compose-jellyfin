@@ -10,6 +10,7 @@ services:
       - /srv/media:/media:ro
       - ${JF_RECORDING_PATH}:/recordings
       - guide:/guide:ro
+      - /srv/dockervols/jellyfin/post-process.sh:/post-process.sh
     restart: 'unless-stopped'
     devices:
       - /dev/dri:/dev/dri
