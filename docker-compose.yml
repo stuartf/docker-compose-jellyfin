@@ -15,7 +15,7 @@ services:
     devices:
       - /dev/dri/renderD128:/dev/dri/renderD128
     group_add:
-      - 105
+      - "105"
     # Optional - alternative address used for autodiscovery
     environment:
       - JELLYFIN_PublishedServerUrl
