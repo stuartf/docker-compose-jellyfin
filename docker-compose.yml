@@ -13,11 +13,7 @@ services:
       - /srv/dockervols/jellyfin/post-process.sh:/post-process.sh
     restart: 'unless-stopped'
     devices:
-      - /dev/dri:/dev/dri
-      - /dev/vchiq:/dev/vchiq
-      - /dev/video10:/dev/video10
-      - /dev/video11:/dev/video11
-      - /dev/video12:/dev/video12
+      - /dev/dri/renderD128:/dev/dri/renderD128
     group_add:
       - video
     # Optional - alternative address used for autodiscovery
