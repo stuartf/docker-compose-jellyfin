@@ -7,7 +7,7 @@ services:
     volumes:
       - ${JF_CONFIG_PATH}:/config
       - ${JF_CACHE_PATH}:/cache
-      - /srv/media:/media:ro
+      - media:/media:ro
       - ${JF_RECORDING_PATH}:/recordings
       - guide:/guide:ro
       - /srv/dockervols/jellyfin/post-process.sh:/post-process.sh
@@ -33,3 +33,8 @@ services:
 
 volumes:
   guide:
+  media:
+    driver_opts:
+      type: nfs
+      o: addr=192.168.1.95,nfsvers=4,ro
+      device: :/srv/media
