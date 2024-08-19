@@ -11,6 +11,7 @@ services:
       - ${JF_RECORDING_PATH}:/recordings
       - guide:/guide:ro
       - /srv/dockervols/jellyfin/post-process.sh:/post-process.sh
+      - ${SONARR_MEDIA}:/sonarr/media
     restart: 'unless-stopped'
     devices:
       - /dev/dri/renderD128:/dev/dri/renderD128
