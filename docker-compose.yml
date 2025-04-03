@@ -22,7 +22,7 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
   zap2xml:
-    image: ghcr.io/jef/zap2xml:nightly
+    image: ghcr.io/jef/zap2xml:latest
     restart: 'unless-stopped'
     environment:
       - OPT_ARGS
