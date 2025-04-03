@@ -1,4 +1,3 @@
-version: '3.5'
 services:
   jellyfin:
     image: jellyfin/jellyfin
@@ -23,14 +22,15 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
   zap2xml:
-    image: shuaiscott/zap2xml
+    image: ghcr.io/jef/zap2xml:latest
     restart: 'unless-stopped'
     environment:
-      - USERNAME
-      - PASSWORD
       - OPT_ARGS
+      - SLEEPTIME=43200
+      - TZ=America/New_York
     volumes:
       - guide:/data
+      - /srv/dockervols/zap2xml:/config
 
 volumes:
   guide:
