@@ -24,7 +24,6 @@ services:
   xmltv-sdingest:
     image: stuartfreeman/xmltv-sdingest:latest
     restart: 'unless-stopped'
-    environment:
     volumes:
       - guide:/root/.xmltv
 
