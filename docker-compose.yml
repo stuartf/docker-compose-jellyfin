@@ -21,16 +21,12 @@ services:
       - JELLYFIN_PublishedServerUrl
     extra_hosts:
       - "host.docker.internal:host-gateway"
-  zap2xml:
-    image: ghcr.io/jef/zap2xml:latest
+  xmltv-sdingest:
+    image: stuartfreeman/xmltv-sdingest:latest
     restart: 'unless-stopped'
     environment:
-      - OPT_ARGS
-      - SLEEPTIME=43200
-      - TZ=America/New_York
     volumes:
-      - guide:/data
-      - /srv/dockervols/zap2xml:/config
+      - guide:/root/.xmltv
 
 volumes:
   guide:
