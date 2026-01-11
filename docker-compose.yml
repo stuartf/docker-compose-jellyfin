@@ -26,6 +26,12 @@ services:
     restart: 'unless-stopped'
     volumes:
       - guide:/root/.xmltv
+  iptv-guide:
+    image: ghcr.io/iptv-org/epg:master
+    environment:
+      - DELAY=1000
+    volumes:
+      - ${EPG_PATH}:/epg
 
 volumes:
   guide:
