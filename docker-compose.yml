@@ -31,7 +31,7 @@ services:
     environment:
       - DELAY=1000
     volumes:
-      - ${EPG_PATH}:/epg
+      - ${EPG_PATH}/channels.xml:/epg/channels.xml
 
 volumes:
   guide:
