@@ -21,11 +21,11 @@ services:
       - JELLYFIN_PublishedServerUrl
     extra_hosts:
       - "host.docker.internal:host-gateway"
-  xmltv-sdingest:
-    image: stuartfreeman/xmltv-sdingest:latest
-    restart: 'unless-stopped'
-    volumes:
-      - guide:/root/.xmltv
+  #xmltv-sdingest:
+  #  image: stuartfreeman/xmltv-sdingest:latest
+  #  restart: 'unless-stopped'
+  #  volumes:
+  #    - guide:/root/.xmltv
   iptv-guide:
     image: ghcr.io/iptv-org/epg:master
     ports:
